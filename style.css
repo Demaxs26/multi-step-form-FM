@@ -17,4 +17,112 @@
     margin: 0;
     padding:0;
     font-family: "Ubuntu";
+    font-size: 16px;
 }
+
+body{
+    position: relative;
+    top: 20vh;
+    display: flex;
+    justify-content: center;
+    background-color: var(--Magnolia);
+}
+
+#mainBlock{
+    display: flex;
+    flex-direction: row;
+    width: min(100%,1000px);
+    height: 650px;
+    padding: 15px;
+    background-color: var(--White);
+    border-radius: 15px;
+    justify-content: space-between;
+}
+
+#fieldset{
+    width:fit-content;
+    border: none;
+    margin-right:120px ;
+}
+
+
+#navigation{
+    display: flex;
+    flex-direction: column;
+    width: 230px;
+    background-image: url('assets/images/bg-sidebar-desktop.svg');
+    background-size: cover;
+    padding: 35px;
+    border-radius: 7px;
+}
+
+
+
+.nav-step-firt-box{
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: 17.5px 0;
+ 
+}
+
+.nav-round{
+    height: 35px;
+    width: 35px;
+    align-content: center;
+    text-align: center;
+    border-radius: 100%;
+    border: var(--Pastel-blue) 2px solid;
+    color: var(--Light-gray);
+    font-weight: 800;
+    padding: 0 1px 1px 0;
+
+}
+
+.round-active-step{
+    background-color: var(--Light-blue);
+    border-color: var(--Light-blue);
+    color: var(--Marine-blue);
+}
+
+.info-place{
+    position: relative;
+    top: 2px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.text-detail{
+    color: var(--Pastel-blue);
+}
+nav p{
+    font-size: 14px;
+}
+
+
+
+.nav-chap-title{
+    color: var(--White);
+    font-weight: bold;
+    margin-top: 4px;
+    letter-spacing: 1.5px;
+}
+
+
+/* form step */
+
+.step-title{
+    font-size: 2rem;
+    color: var(--Marine-blue);
+}
+
+.formStep{
+    margin-top: 50px;
+}
+
+.formStep > p{
+    margin-top: 10px;
+    color: var(--Cool-gray)
+}
+
