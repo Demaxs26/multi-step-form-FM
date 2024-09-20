@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link href ="style.css" rel ="stylesheet"  type = "text/css">
+  <script src="script.js" defer></script>
   <title>Frontend Mentor | Multi-step form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,7 +16,7 @@
   <main id = "mainBlock">
     <nav id ="navigation">
       <div class ="nav-step-firt-box">
-        <p class ="nav-round round-active-step">1</p>
+        <p class ="nav-round ">1</p>
         <div class ="info-place">
           <p class="text-detail">STEP 1</p>
           <p class ="nav-chap-title">YOUR INFO</p>
@@ -44,6 +45,11 @@
         </div>
       </div>
     </nav>
+
+
+
+
+    
     <fieldset id ="fieldset">
 
       <section class = "formStep">
@@ -54,30 +60,56 @@
           <div class ="wrap">
             <label class ="text-label" for="Name">Name</label>
             <label class ="input-error" for="Name">This field is required</label>
-            <input type="text" placeholder="e.g. Stephen King" id  ="Name" name="Name">
+            <input class ="input-step-one "type="text" placeholder="e.g. Stephen King" id  ="Name" name="Name">
 
           </div>
 
           <div class ="wrap">
-            <label class ="text-label" for="Email"></label>
-            <label class ="input-error" for="Email"></label>
-            <input type="email" name="Email" id ="Email" placeholder="e.g stephenking@gmail.com">
+            <label class ="text-label" for="Email">Email Address</label>
+            <label class ="input-error" for="Email">This field is required</label>
+            <input class ="input-step-one" type="email" name="Email" id ="Email" placeholder="e.g stephenking@gmail.com">
 
           </div>
 
           <div class ="wrap">
-            <label class ="text-label" for="phone"></label>
-            <label class ="input-error" for="phone"></label>
-            <input type="number" id  ="phone" placeholder="e.g +1 234 567 890" name ="phone">
+            <label class ="text-label" for="phone">Phone Number</label>
+            <label class ="input-error" for="phone">This field is required</label>
+            <input class ="input-step-one" type="number" id  ="phone" placeholder="e.g +1 234 567 890" name ="phone">
 
           </div>
 
         </div>
+        <button class ="btnUP"type="submit">Next Step</button>
       </section>
 
       <section class = "formStep">
         <h1 class ="step-title"> Select your plan</h1>
         <p class ="text-detail">You have the option of monthly or yearly billing.</p>
+        <div id ="formTwo">
+
+          <label class ="radioBox">
+            <img src="assets/images/icon-arcade.svg" alt="icon arcade" class ="icon-step-two">
+            <input class ="input-step-two"type="radio" name ="plan" value ="arcade">
+            <p class ="titlt-text">Arcade</p>
+            <p class ="price-text">$9/mo</p>
+          </label>
+
+          <label class ="radioBox">
+            <img src="assets/images/icon-advanced.svg" alt="icon advanced" class ="icon-step-two">
+            <input class ="input-step-two"type="radio" name ="plan" value ="advanced">
+            <p class ="titlt-text">Advanced</p>
+            <p class ="price-text">$12/mo</p>
+          </label>
+
+          <label class ="radioBox">
+            <img src="assets/images/icon-pro.svg" alt="icon pro" class ="icon-step-two">
+            <input class ="input-step-two"type="radio" name ="plan" value ="pro">
+            <p class ="titlt-text">Pro</p>
+            <p class ="price-text">$15/mo</p>
+          </label>
+
+        </div>
+        <button class ="btnUP"type="submit">Next Step</button>
       </section>
 
       <section class = "formStep">
@@ -185,6 +217,6 @@
 
   <!-- Step 5 end -->
   
-
+  
 </body>
 </html>

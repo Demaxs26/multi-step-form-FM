@@ -17,7 +17,7 @@
     margin: 0;
     padding:0;
     font-family: "Ubuntu";
-    font-size: 16px;
+    font-size: 18px;
 }
 
 body{
@@ -42,7 +42,7 @@ body{
 #fieldset{
     width:fit-content;
     border: none;
-    margin-right:120px ;
+    margin: 0 9%;
 }
 
 
@@ -87,7 +87,6 @@ body{
 
 .info-place{
     position: relative;
-    top: 2px;
     display: flex;
     flex-direction: column;
     margin-left: 15px;
@@ -118,7 +117,11 @@ nav p{
 }
 
 .formStep{
-    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    padding: 20px;
+    display: none;
 }
 
 .formStep > p{
@@ -126,3 +129,107 @@ nav p{
     color: var(--Cool-gray)
 }
 
+
+.wrap{
+    margin-top: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+
+.input-step-one{
+    width: 100%;
+    margin-top: 10px;
+    height: 50px;
+    border-radius: 10px;
+    border: var(--Light-gray) 1px solid;
+    padding-left: 15px;
+
+}
+
+.input-step-one:focus-visible{
+    border: var(--Purplish-blue) 1px solid;
+    outline-offset: unset;
+}
+
+.input-step-one-err{
+    border: var(--Strawberry-red) 1px solid;
+}
+
+:focus-visible{
+    outline: none;
+}
+
+.text-label{
+    color: var(--Marine-blue);
+}
+
+.input-error{
+    color: var(--Strawberry-red);
+    place-self: flex-end;
+    opacity: 0;
+}
+
+.input-error:has(+ .input-step-one-err){
+    opacity: 1;
+}
+
+#form{
+    margin-top: 40px;
+}
+
+button[type ="submit"]{
+    background-color: var(--Marine-blue);
+    border: unset;
+    border-radius: 7px;
+    height: 50px;
+    width: fit-content;
+    padding: 0 25px 2px;
+    color: var(--White);
+    align-self: self-end;
+    margin-top: 90px;
+}
+
+
+/* second step style */
+
+#formTwo{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.radioBox{
+    width: 106px;
+    border: var(--Light-gray) 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.radioBox:has(+ .radioBox){
+    margin-right: 20px;
+}
+
+.input-step-two{
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+
+}
+
+.icon-step-two{
+    margin-bottom: 40px;
+}
+
+.titlt-text{
+    color: var(--Marine-blue);
+    margin-bottom: 4px;
+    font-weight: 600
+}
+
+.price-text{
+    color: var(--Cool-gray);
+    font-size: 16px;
+}
