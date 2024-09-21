@@ -37,6 +37,8 @@ body{
     background-color: var(--White);
     border-radius: 15px;
     justify-content: space-between;
+    -webkit-box-shadow: 7px 10px 25px 3px var(--Light-gray); 
+    box-shadow: 8px 10px 25px 3px var(--Light-gray);
 }
 
 #fieldset{
@@ -212,6 +214,14 @@ button[type ="submit"]{
     margin-right: 20px;
 }
 
+.radioBox:has(> .input-step-two:checked){
+    border-color: var(--Purplish-blue);
+}
+.radioBox:hover{
+    border-color: var(--Purplish-blue);
+}
+
+
 .input-step-two{
     -moz-appearance: none;
     -webkit-appearance: none;
@@ -232,4 +242,60 @@ button[type ="submit"]{
 .price-text{
     color: var(--Cool-gray);
     font-size: 16px;
+}
+
+.yeat-month-switch-block{
+    margin: 12% 0;
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+}
+
+.text-switch{
+    color: var(--Cool-gray);
+}
+
+.text-switch:has(+ div){
+    margin-right: 20px;
+}
+
+.switch-button{
+    width: 35px;
+    background-color: var(--Marine-blue);
+    border-radius: 39px;
+    margin-right: 20px;
+    display: flex;
+    padding: 5px;
+    justify-content: start;
+}
+
+.switch-button span{
+    background-color: var(--White);
+    border-radius: 100%;
+    height: 14px;
+    width: 14px;
+    display: block;
+    
+}
+
+.box-btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btnDown{
+    margin-top: 90px;
+    border: none;
+    color: var(--Cool-gray),
+}
+
+.btnDown:hover{
+    color: var(--Marine-blue);
+}
+
+.yearlyDiscount{
+    color: var(--Marine-blue);
+    font-size: 12px;
+    margin-top: 5px;
 }
