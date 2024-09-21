@@ -94,7 +94,7 @@ body{
     margin-left: 15px;
 }
 
-.text-detail{
+nav .text-detail{
     color: var(--Pastel-blue);
 }
 nav p{
@@ -193,6 +193,10 @@ button[type ="submit"]{
     margin-top: 90px;
 }
 
+button[type ="submit"]:hover{
+    opacity: 0.9;
+}
+
 
 /* second step style */
 
@@ -257,6 +261,7 @@ button[type ="submit"]{
 
 .text-switch:has(+ div){
     margin-right: 20px;
+    color: var(--Marine-blue);
 }
 
 .switch-button{
@@ -287,7 +292,8 @@ button[type ="submit"]{
 .btnDown{
     margin-top: 90px;
     border: none;
-    color: var(--Cool-gray),
+    color: var(--Cool-gray);
+    background-color: unset;
 }
 
 .btnDown:hover{
@@ -299,3 +305,76 @@ button[type ="submit"]{
     font-size: 12px;
     margin-top: 5px;
 }
+
+/* step three style */
+
+#formThree{
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+.checkBoxBox{
+    display: flex;
+    padding: 20px;
+    border: var(--Light-gray) 1px solid;
+    border-radius: 7px;
+}
+
+.checkBoxBox:hover{
+    border-color: var(--Purplish-blue);
+}
+
+.checkBoxBox:has(+ .checkBoxBox){
+    margin-bottom: 20px;
+}
+
+.checkBoxBox:has(> input:checked){
+    border-color: var(--Purplish-blue);
+}
+
+input[type ="checkbox"]{
+    margin-right: 20px;
+    border-color: var(--Light-gray);
+
+}
+
+input[type = "checkbox"]:checked{
+    background-color: var(--Purplish-blue);
+    background-image: url('assets/images/icon-checkmark.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+input[type="checkbox" i] {
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border-color: var(--Light-gray);
+    border: var(--Light-gray) 1px solid;
+    appearance: none;
+    align-self: center;
+}
+
+.box-texts{
+    width: fit-content;
+}
+
+.price-text-three{
+   align-self: center;
+   color: var(--Purplish-blue);
+
+}
+
+#formThree .text-detail{
+    color: var(--Cool-gray);
+    font: 16px;
+}
+
+.separationText{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+}
+

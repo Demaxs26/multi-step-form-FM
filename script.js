@@ -8,9 +8,11 @@ listPriceSelect = document.querySelectorAll(".price-text");
 listTextDiscount = document.querySelectorAll(".yearlyDiscount");
 switchButton = document.querySelector(".switch-button");
 listTextButtonSwitch = document.querySelectorAll(".text-switch");
+listPriceThree = document.querySelectorAll(".price-text-three");
 
-let activeStep = 1
-let tabPrice =[["$9/mo","$90/yr"],["$12/mo","$120/yr"],["$15/mo","$150/yr"]]
+let activeStep = 0;
+const tabPrice =[["$9/mo","$90/yr"],["$12/mo","$120/yr"],["$15/mo","$150/yr"]]
+const tabPriceThree =[["+$1/mo","+$10/yr"],["+$2/mo","+$20/yr"],["+$2/mo","+$20/yr"]];
 let monthOrYear = 1;
 
 
@@ -30,24 +32,38 @@ function f_field_error(field){
 }
 
 function f_field_NO_error(field){
-    console.log("remove");
     field.classList.remove("input-step-one-err");
 }
 
-function f_checkForNoValue(field){
+function f_checkForNoValue(field,haveError){
     if (field.value ===""){
         f_field_error(field);
         return true
+    }else if(haveError === true){
+        return true
     }
     
+}
+
+function f_checkEmail(haveError){
+    let regex = new RegExp("[a-zA-Z0-9.*%±]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}");
+    console.log(listFirstStepField[1])
+    if (!regex.test(listFirstStepField[1].value)){
+        f_field_error(listFirstStepField[1]);
+        return true
+    }else if(haveError){
+        return true
+    }
 }
 
 function f_check_for_error(step){
     let haveError =false;
     if (step === 0){
         for (let i =0; i<3;i++){
-            haveError = f_checkForNoValue(listFirstStepField[i]);
+            haveError = f_checkForNoValue(listFirstStepField[i],haveError);
+            
         }
+        haveError = f_checkEmail(haveError)
         return haveError
     }else{
 
@@ -57,6 +73,7 @@ function f_check_for_error(step){
 function f_change_price(change){
     for(let i = 0;i<listPriceSelect.length;i++){
         listPriceSelect[i].innerText = tabPrice[i][change];
+        listPriceThree[i].innerText = tabPriceThree[i][change];
         if (change){
             listTextDiscount[i].innerText ="2 months free";
             switchButton.style.justifyContent = "end";
