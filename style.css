@@ -124,6 +124,7 @@ nav p{
     margin-top: 20px;
     padding: 20px;
     display: none;
+    width: fit-content;
 }
 
 .formStep > p{
@@ -378,3 +379,85 @@ input[type="checkbox" i] {
     justify-content: space-between;
 }
 
+/* step four style */
+
+
+.formStep:has(.formFour){
+    position: relative;
+    right: 40px;
+}
+.formFour{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--Magnolia);
+    width: 100%;
+
+    border-radius: 7px;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+.TypeStep{
+    display: flex ;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.additionnalStep{
+    display: flex;
+    flex-direction: column;
+}
+
+.box-text-add{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+}
+
+.TypeStep > .box-text-add{
+    width: 100%;
+}
+.box-text-add:has(+ .box-text-add){
+    margin: 20px 0;
+}
+
+.formFour:has(.Total-price){
+    background-color: unset;
+    margin-top: 7px;
+}
+
+.text-detail{
+    color: var(--Cool-gray)
+}
+
+.btnChange{
+    color: var(--Cool-gray);
+    text-decoration: underline 2px;
+}
+
+
+.price-text-four-first{
+    color :var(--Marine-blue);
+    font-weight: 600;
+    align-self: center;
+}
+
+.TypeStep:has(.text-place){
+    padding-bottom: 30px;
+    border-bottom: var(--Light-gray) 1px solid;
+}
+
+.add-price{
+    color: var(--Marine-blue);
+    font-size: 14px;
+    align-self: center;
+}
+
+.Total-price{
+    color: var(--Purplish-blue);
+    font-weight: 600;
+
+}
