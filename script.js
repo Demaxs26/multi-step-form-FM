@@ -9,11 +9,16 @@ listTextDiscount = document.querySelectorAll(".yearlyDiscount");
 switchButton = document.querySelector(".switch-button");
 listTextButtonSwitch = document.querySelectorAll(".text-switch");
 listPriceThree = document.querySelectorAll(".price-text-three");
+listInputRadio = document.querySelectorAll(".input-step-two");
+textType = document.querySelector(".text-place .titlt-text");
+textPricetype = document.querySelector(".price-text-four-first");
 
-let activeStep = 0;
+
+let activeStep = 1;
 const tabPrice =[["$9/mo","$90/yr"],["$12/mo","$120/yr"],["$15/mo","$150/yr"]]
 const tabPriceThree =[["+$1/mo","+$10/yr"],["+$2/mo","+$20/yr"],["+$2/mo","+$20/yr"]];
 let monthOrYear = 1;
+let allAboutYearAndMonth = [["(Monthly)","(Yearly)"],["/mo","/yr"]];
 
 
 function f_changeActiveStep(change){
@@ -96,13 +101,35 @@ function f_switchYearMonth(){
     }
 }
 
+function f_get_values(number,field,display,location,addAfter){
+    display.innerText = field[number].value + addAfter;
+}
+
+function f_displayData(){
+    let index
+    if(monthOrYear === 1){
+        index = 0;
+    }else{
+        index = 1;
+    }
+    for (let i =0;i<3;i++){
+        if (listInputRadio[i].checked === true){
+            f_get_values(i,listInputRadio,textType,index,allAboutYearAndMonth[0][index]);
+            f_get_values(i,tabPrice,textPricetype,index,"");
+        }
+    }
+}
 f_changeActiveStep(0);
 
 for (let i = 0;i<btnUpStep.length;i++ ){
     btnUpStep[i].addEventListener("click", function(){
         if (!f_check_for_error(i)){
+            if (i === 2){
+                f_displayData()
+            }
             f_changeActiveStep(1)
         }
+
      
     })
 }
