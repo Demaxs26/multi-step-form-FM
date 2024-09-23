@@ -12,6 +12,9 @@ listPriceThree = document.querySelectorAll(".price-text-three");
 listInputRadio = document.querySelectorAll(".input-step-two");
 textType = document.querySelector(".text-place .titlt-text");
 textPricetype = document.querySelector(".price-text-four-first");
+listCheckbox = document.querySelectorAll(".checkbox");
+listDisplayTextChecbox = document.querySelectorAll(".additionnalStep .box-text-add .text-detail");
+console.log(listDisplayTextChecbox)
 
 
 let activeStep = 1;
@@ -101,8 +104,14 @@ function f_switchYearMonth(){
     }
 }
 
-function f_get_values(number,field,display,location,addAfter){
+function f_get_values(number,field,display,addAfter){
     display.innerText = field[number].value + addAfter;
+}
+function f_get_value_price(number,tab,display,index){
+    display.innerText = tab[number][index];
+}
+function f_get_values_checkbox(number,field,display,index){
+    display.innerText = field[number].value;
 }
 
 function f_displayData(){
@@ -114,8 +123,14 @@ function f_displayData(){
     }
     for (let i =0;i<3;i++){
         if (listInputRadio[i].checked === true){
-            f_get_values(i,listInputRadio,textType,index,allAboutYearAndMonth[0][index]);
-            f_get_values(i,tabPrice,textPricetype,index,"");
+            f_get_values(i,listInputRadio,textType,allAboutYearAndMonth[0][index]);
+            f_get_value_price(i,tabPrice,textPricetype,index);
+        }
+    }
+    for (let i = 0; i<3;i++){
+        if (listCheckbox[i].checked === true){
+
+            f_get_values_checkbox(i,listCheckbox,listDisplayTextChecbox[i],index);
         }
     }
 }
