@@ -14,14 +14,18 @@ textType = document.querySelector(".text-place .titlt-text");
 textPricetype = document.querySelector(".price-text-four-first");
 listCheckbox = document.querySelectorAll(".checkbox");
 listDisplayTextChecbox = document.querySelectorAll(".additionnalStep .box-text-add .text-detail");
+listAddprice = document.querySelectorAll(".add-price");
+finalPriceText = document.querySelector(".TypeStep .text-detail");
+finalPrice =document.querySelector(".Total-price");
+
 console.log(listDisplayTextChecbox)
 
 
 let activeStep = 1;
-const tabPrice =[["$9/mo","$90/yr"],["$12/mo","$120/yr"],["$15/mo","$150/yr"]]
-const tabPriceThree =[["+$1/mo","+$10/yr"],["+$2/mo","+$20/yr"],["+$2/mo","+$20/yr"]];
+const tabPrice =[["9","90"],["12","120"],["15","150"]]
+const tabPriceThree =[["1","10"],["2","20"],["2","20"]];
 let monthOrYear = 1;
-let allAboutYearAndMonth = [["(Monthly)","(Yearly)"],["/mo","/yr"]];
+const allAboutYearAndMonth = [["(Monthly)","(Yearly)"],["/mo","/yr"],["(Per month)","(Per year)"]];
 
 
 function f_changeActiveStep(change){
@@ -80,8 +84,8 @@ function f_check_for_error(step){
 
 function f_change_price(change){
     for(let i = 0;i<listPriceSelect.length;i++){
-        listPriceSelect[i].innerText = tabPrice[i][change];
-        listPriceThree[i].innerText = tabPriceThree[i][change];
+        listPriceSelect[i].innerText = "$" + tabPrice[i][change] + allAboutYearAndMonth[1][change];
+        listPriceThree[i].innerText = "+$" + tabPriceThree[i][change] + allAboutYearAndMonth[1][change];
         if (change){
             listTextDiscount[i].innerText ="2 months free";
             switchButton.style.justifyContent = "end";
@@ -104,18 +108,10 @@ function f_switchYearMonth(){
     }
 }
 
-function f_get_values(number,field,display,addAfter){
-    display.innerText = field[number].value + addAfter;
-}
-function f_get_value_price(number,tab,display,index){
-    display.innerText = tab[number][index];
-}
-function f_get_values_checkbox(number,field,display,index){
-    display.innerText = field[number].value;
-}
 
 function f_displayData(){
-    let index
+    let index;
+    let totPrice =0;
     if(monthOrYear === 1){
         index = 0;
     }else{
@@ -123,16 +119,20 @@ function f_displayData(){
     }
     for (let i =0;i<3;i++){
         if (listInputRadio[i].checked === true){
-            f_get_values(i,listInputRadio,textType,allAboutYearAndMonth[0][index]);
-            f_get_value_price(i,tabPrice,textPricetype,index);
+            textType.innerText = listInputRadio[i].value + allAboutYearAndMonth[0][index];
+            textPricetype.innerText = "$" + tabPrice[i][index] + allAboutYearAndMonth[1][index];
+            totPrice = totPrice + parseInt(tabPrice[i][index]);
         }
     }
     for (let i = 0; i<3;i++){
         if (listCheckbox[i].checked === true){
-
-            f_get_values_checkbox(i,listCheckbox,listDisplayTextChecbox[i],index);
+            listDisplayTextChecbox[i].innerText = listCheckbox[i].value ;
+            listAddprice[i].innerText = "+$"+tabPriceThree[i][index] + allAboutYearAndMonth[1][index];
+            totPrice = totPrice + parseInt(tabPriceThree[i][index]);
         }
     }
+    finalPriceText.innerText = "Total" + allAboutYearAndMonth[2][index];
+    finalPrice.innerText = `+$${totPrice}${allAboutYearAndMonth[1][index]}`
 }
 f_changeActiveStep(0);
 
