@@ -1,22 +1,24 @@
-listStepForm = document.querySelectorAll(".formStep");
-listStepRound = document.querySelectorAll(".nav-round");
-btnUpStep = document.querySelectorAll(".btnUP");
-listFirstStepField = document.querySelectorAll(".input-step-one");
-listbtnDownStep = document.querySelectorAll(".btnDown");
-btnSwitch = document.querySelector(".yeat-month-switch-block");
-listPriceSelect = document.querySelectorAll(".price-text");
-listTextDiscount = document.querySelectorAll(".yearlyDiscount");
-switchButton = document.querySelector(".switch-button");
-listTextButtonSwitch = document.querySelectorAll(".text-switch");
-listPriceThree = document.querySelectorAll(".price-text-three");
-listInputRadio = document.querySelectorAll(".input-step-two");
-textType = document.querySelector(".text-place .titlt-text");
-textPricetype = document.querySelector(".price-text-four-first");
-listCheckbox = document.querySelectorAll(".checkbox");
-listDisplayTextChecbox = document.querySelectorAll(".additionnalStep .box-text-add .text-detail");
-listAddprice = document.querySelectorAll(".add-price");
-finalPriceText = document.querySelector(".TypeStep .text-detail");
-finalPrice =document.querySelector(".Total-price");
+const listStepForm = document.querySelectorAll(".formStep");
+const listStepRound = document.querySelectorAll(".nav-round");
+const btnUpStep = document.querySelectorAll(".btnUP");
+const listFirstStepField = document.querySelectorAll(".input-step-one");
+const listbtnDownStep = document.querySelectorAll(".btnDown");
+const btnSwitch = document.querySelector(".yeat-month-switch-block");
+const listPriceSelect = document.querySelectorAll(".price-text");
+const listTextDiscount = document.querySelectorAll(".yearlyDiscount");
+const switchButton = document.querySelector(".switch-button");
+const listTextButtonSwitch = document.querySelectorAll(".text-switch");
+const listPriceThree = document.querySelectorAll(".price-text-three");
+const listInputRadio = document.querySelectorAll(".input-step-two");
+const textType = document.querySelector(".text-place .titlt-text");
+const textPricetype = document.querySelector(".price-text-four-first");
+const listCheckbox = document.querySelectorAll(".checkbox");
+const listDisplayTextChecbox = document.querySelectorAll(".additionnalStep .box-text-add .text-detail");
+const listAddprice = document.querySelectorAll(".add-price");
+const finalPriceText = document.querySelector(".TypeStep .text-detail");
+const finalPrice =document.querySelector(".Total-price");
+const btnchange =document.querySelector(".btnChange");
+const btnSubmit = document.querySelector(".btnSubmit");
 
 console.log(listDisplayTextChecbox)
 
@@ -157,4 +159,13 @@ for (let i =0;i<listbtnDownStep.length;i++){
 
 btnSwitch.addEventListener("click", function(){
     f_switchYearMonth();
+})
+
+btnchange.addEventListener("click" ,function(){
+    f_changeActiveStep(-2);
+})
+
+btnSubmit.addEventListener("click", function(){
+    listStepForm[3].style.display = "none";
+    listStepForm[4].style.display = "flex";
 })

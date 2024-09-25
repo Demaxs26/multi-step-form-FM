@@ -396,6 +396,10 @@ input[type="checkbox" i] {
     margin-top: 60px;
 }
 
+.formFour .box-btn{
+    margin-top: -100px;
+}
+
 .TypeStep{
     display: flex ;
     flex-direction: row;
@@ -435,6 +439,7 @@ input[type="checkbox" i] {
 .btnChange{
     color: var(--Cool-gray);
     text-decoration: underline 2px;
+    cursor: pointer;
 }
 
 
@@ -464,4 +469,17 @@ input[type="checkbox" i] {
     color: var(--Purplish-blue);
     font-weight: 600;
     font-size: 1.4rem;
+}
+
+.img-ThankYou{
+    width: 10vw;
+}
+
+.formStep:has( > img){
+    align-items: center;
+    padding: 25vh 0;
+}
+
+.formStep:has( > img) .text-detail{
+    text-align: center;
 }
