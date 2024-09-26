@@ -483,3 +483,38 @@ input[type="checkbox" i] {
 .formStep:has( > img) .text-detail{
     text-align: center;
 }
+
+@media screen and (max-width: 1040px){
+    body{
+        top: 0;
+    
+    }
+
+    #mainBlock{
+        flex-direction: column;
+        padding: 0;
+        border-radius: unset;
+        width: 100%;
+    }
+
+    #navigation{
+        width: 100%;
+        flex-direction: row;
+        border-radius: unset;
+        justify-content: center;
+        padding: 1rem 0 6rem;
+        background-image: url('assets/images/bg-sidebar-mobile.svg');
+    }
+
+    .info-place{
+        display: none;
+    }
+
+    .nav-step-firt-box:has(+ .nav-step-firt-box){
+        margin-right: 1rem;
+    }
+
+    #fieldset{
+        width: 100%;
+    }
+}
