@@ -317,6 +317,7 @@ button[type ="submit"]:hover{
 
 .checkBoxBox{
     display: flex;
+    flex-direction: row;
     padding: 20px;
     border: var(--Light-gray) 1px solid;
     border-radius: 7px;
@@ -360,6 +361,7 @@ input[type="checkbox" i] {
 
 .box-texts{
     width: fit-content;
+    
 }
 
 .price-text-three{
@@ -494,6 +496,7 @@ input[type="checkbox" i] {
         flex-direction: column;
         padding: 0;
         border-radius: unset;
+        align-items: center;
         width: 100%;
     }
 
@@ -515,6 +518,59 @@ input[type="checkbox" i] {
     }
 
     #fieldset{
+        width: 90%;
+        align-self: center;
+        position: relative;
+        top: -10vh;
+        background-color: var(--White);
+        border-radius: 15px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 540px){
+
+    #formTwo{
+        flex-direction: column;
+        align-items: center;
+        padding: 2vh;
+    }
+
+    .radioBox{
         width: 100%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .radioBox:has( + .radioBox){
+        margin: 0 0 2vh 0;
+    }
+
+    .icon-step-two{
+        margin: 0 2vh 0 0 ;
+    }
+
+    #formThree{
+        
+    }
+
+    .checkBoxBox{
+        padding :10px;
+
+    }
+
+    .separationText{
+        width: unset;
+    }
+
+    .box-texts{
+        position: relative;
+        justify-self: self-start;
+    }
+
+    .price-text-three{
+        
+        right: 0vw;
     }
 }
