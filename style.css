@@ -475,11 +475,12 @@ input[type="checkbox" i] {
 
 .img-ThankYou{
     width: 10vw;
+    margin-bottom: 5vh;
 }
 
 .formStep:has( > img){
     align-items: center;
-    padding: 25vh 0;
+    padding: 25vh ;
 }
 
 .formStep:has( > img) .text-detail{
@@ -527,6 +528,10 @@ input[type="checkbox" i] {
         display: flex;
         justify-content: center;
     }
+
+    .formStep:has( > img){
+        padding: 25vh 20vw;
+    }
 }
 
 @media screen and (max-width: 540px){
@@ -572,5 +577,27 @@ input[type="checkbox" i] {
     .price-text-three{
         
         right: 0vw;
+    }
+
+    .formStep:has(.formFour){
+        position: unset;
+    }
+
+    .formFour{
+        width: unset;
+        padding-bottom: 0;
+    }
+
+    .formFour > .TypeStep{
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+    .formStep:has( > img){
+       padding: 10vh 15vw 40vh;
+    }
+
+    .formStep > img{
+        width: 15vw;
     }
 }
