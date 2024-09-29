@@ -23,7 +23,7 @@ const btnSubmit = document.querySelector(".btnSubmit");
 console.log(listDisplayTextChecbox)
 
 
-let activeStep = 1;
+let activeStep = 0;
 const tabPrice =[["9","90"],["12","120"],["15","150"]]
 const tabPriceThree =[["1","10"],["2","20"],["2","20"]];
 let monthOrYear = 1;
